@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+# Phake autocompletion
+# ====================
+# (http://jaredforsyth.com/blog/2010/may/30/easy-zsh-auto-completion/)
+_phake() {
+    reply=(`phake -T | awk 'NR > 1 { print $1 }' | tr "\\n" " "`)
+}
+compctl -K _phake phake
