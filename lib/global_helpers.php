@@ -31,4 +31,11 @@ function after($task, $lambda) {
 function desc($description) {
     builder()->desc($description);
 }
-?>
+
+function args(){
+    return builder()->get_application()->get_args();
+}
+
+function invoke($task){
+    return builder()->get_application()->invoke($task);
+}
